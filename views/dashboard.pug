@@ -1,0 +1,35 @@
+html
+  head
+    title= title
+  body
+    h1=`Welcome user: ${name}`
+    p(style={color: 'red'})= error
+
+    h4 Create Group
+    form(action="/groups" method="post")
+      label Name
+      input(name='name')
+      input(type='submit')
+    if groups.length
+      h4 Add user to group
+      form(action="" method="post" id="group-email-form")
+        label Group
+        select(name='group' id="group-email-select")
+          each group in groups
+            option(value=group.id)= group.name
+        label Email
+        input(name='email')
+        input(type='submit')
+    h3 Groups
+    each group in groups
+      div(style={border: '1px black solid', padding: '8px'})
+        h4= group.name
+        if group.members.length
+          h5 Members
+          ul
+            each member in group.members
+              li= `${member.email} ${member.name ? `- ${member.name}` : ''}`
+        else
+          h5 No Members in this group
+    
+    script(src='/scripts/dashboard.js')

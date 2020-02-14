@@ -1,0 +1,15 @@
+html
+  head
+    title= title
+  body
+    h1 Create account
+    form(action="/users" method="post")
+      label email
+      input(name='email')
+      label name
+      input(name='name')
+      label password
+      input(name='password' type="password")
+      input(type='submit')
+    a(href="/login") Already have an account?  Sign in!
+    p(style={color: 'red'})= error
