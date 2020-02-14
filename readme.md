@@ -4,7 +4,7 @@ Created February 2020, aproximately 6 hours of development time.
 
 ## Installation
 
-Clone the repo, run `npm install`.  Install an instance of postgresql and ensure it is configured to accept local connections.  Run the SQL provided in the `schema.sql` file found at the root level of this repository.  Once that is done you can run the project by running `node express.js` and connecting to the port on localhost provided in the terminal output.  
+Clone the repo, run `npm install`.  Install an instance of postgresql and ensure it is configured to accept local connections.  Run the SQL provided in the `schema.sql` file found at the root level of this repository.  Make changes to the config.js file to support the new database.  Once that is done you can run the project by running `node express.js` and connecting to the port on localhost provided in the terminal output.  
 
 ## Considerations
 
